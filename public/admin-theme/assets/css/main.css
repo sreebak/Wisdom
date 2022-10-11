@@ -1,0 +1,30 @@
+.deactive td {
+    text-decoration: line-through;
+    color: red;
+}
+
+.img-wrap {
+    position: relative;
+    width:100px;
+    height:100px;
+    float: left;
+}
+
+.img-wrap img {
+    max-width:100%;
+    max-height:100%;
+}
+    
+.img-wrap a {
+    display:block;
+    width:20px;
+    height:20px;
+    position:absolute;
+    top:3px;
+    right:3px;
+    background:#c00;
+    color: #fff;
+    overflow:hidden;
+    text-indent:-9999px;
+ }
+    

@@ -1,0 +1,8 @@
+[01-Sep-2022 07:04:53 America/Chicago] PHP Fatal error:  Uncaught Error: Failed opening required '/home1/reonc6ey/public_html/wisdomsmercury/public/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php80/root/usr/share/pear') in /home1/reonc6ey/public_html/wisdomsmercury/public/index.php:24
+Stack trace:
+#0 {main}
+  thrown in /home1/reonc6ey/public_html/wisdomsmercury/public/index.php on line 24
+[01-Sep-2022 07:04:54 America/Chicago] PHP Fatal error:  Uncaught Error: Failed opening required '/home1/reonc6ey/public_html/wisdomsmercury/public/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php80/root/usr/share/pear') in /home1/reonc6ey/public_html/wisdomsmercury/public/index.php:24
+Stack trace:
+#0 {main}
+  thrown in /home1/reonc6ey/public_html/wisdomsmercury/public/index.php on line 24
