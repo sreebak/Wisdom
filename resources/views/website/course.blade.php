@@ -1,0 +1,304 @@
+@extends("website.theme.layout")
+@section('meta-data')
+@if(strlen($course->metatags) <=0) 
+<title>{{ $course->product_name }}</title>
+<meta name="description" content="{{ strip_tags($course->short_description) }}" />
+<meta name="keywords" content="{{ $course->keywords ? $course->keywords : $gens->keywords }}" />
+{!! $gens->metatags !!}
+@else
+{!! $course->metatags ? $course->metatags : $gens->metatags !!}
+@endif
+@endsection
+@section('mystyles')
+@endsection
+@section('address')
+{!! $gens->address !!}
+@endsection
+@section('phone1')
+{{ $gens->phone1 }}
+@endsection
+@section('email')
+{{ $gens->email1 }}
+@endsection
+@section('mystyles')
+@endsection
+@section('header-section')
+@endsection
+@section("content")
+<style>
+   .hero.v3 main section:after { 
+   right: -15.5% !important;
+   }
+   .hero.v3 main section>*+* {
+   margin-top: 5px;
+   color: #0156a6 !important;
+   font-size: 18px;
+   }
+   .text_wis{
+   color: #00685d; 
+   }
+   .hero.v3 {
+   height: 50vh;
+   }
+   .hero.v3 main { 
+   height: 50vh; 
+   }
+   .wis_50{
+   width: 50%;
+   }
+   
+   .hero.v3 main aside img { 
+   height: 100% !important;
+   width: auto !important;
+   }
+
+   .hero.v3 main aside { 
+    width: auto;  
+    margin: auto;
+    height: 50vh; 
+}
+</style>
+<div class="hero v3 container-fluid">
+   <main>
+      <section  class="wis_50">
+         {{-- 
+         <h1>{{$course->product_name}}<em>{{$course->short_description}}</em>
+         </h1>
+         --}}
+         <h1 class="river__header"><span class="text_wis"> {{$course->product_name}}</span> 
+            {{-- <span
+               class="skew-highlight skew-highlight--accent">
+            <span class="unskew-text">{{$course->short_description}}</span>
+            </span> --}}
+         </h1>
+         <p>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+         </p>
+         <!-- <table class="text-white">
+            <tr>
+                <td> <img src="assets/image/png/cal_icon.png" class="img-fluid h_25" alt=""> </td>
+                <td>Live Class</td>
+                <td>:</td>
+                <td>01</td>
+                <td>Dec</td>
+                <td> 2020 </td>
+            </tr>
+            </table> -->
+         <div class="d-flex text-white">
+            <div><img src="{{asset('assets/image/png/cal_icon.png')}}" class="img-fluid h_25" alt=""></div>
+            <div class="m-1">Live Class</div>
+            <div class="m-1">:</div>
+            {{-- 
+            <div class="m-1">{{date('d-m-Y', strtotime($course->start_date))}}
+            </div>
+            --}}
+            <div class="m-1">{{$course->start_date}}</div>
+            {{-- 
+            <div class="m-1">Dec</div>
+            <div class="m-1">2020</div>
+            --}}
+         </div>
+         <!-- <a class="r_button r_button--primary max_width_160" href="find-a-tutor.html"> APPLY NOW </a> -->
+      </section>
+      {{-- 
+      <aside> <img src="{{asset('storage/products/'.$course->image2)}}"
+         data-src="{{asset('storage/products/'.$course->image)}}" alt="prices-01.jpg"> </aside>
+      --}}
+      <aside class="wis_50"> <img src="../storage/pdtcatg/inner-page-banner.webp"
+         data-src="../storage/pdtcatg/inner-page-banner.webp" alt="prices-01.jpg">
+        </aside>
+   </main>
+</div>
+<section class="section_allsub_01">
+   <div class="container">
+      <div class="row">
+         <div class=" col-sm-6 col-12 m-auto">
+            <h1> Summary </h1>
+            <p class="text-justify">
+               {!!$course->long_description!!}
+            </p>
+            {{-- 
+            <p class="text-justify">
+               It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+               and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem
+               Ipsum.
+            </p>
+            --}}
+         </div>
+         <div class="col-sm-6 col-12">
+            
+            <img src="{{asset('storage/products/'.$course->image1)}}" class="img-fluid" alt="">
+            
+         </div>
+      </div>
+   </div>
+</section>
+<section class="section_allsub_02">
+   <div class="grid-flow__background--secondary">
+      <div class="grid grid--full grid-flow--vertical-8 container">
+         <!-- <h3 class="river__header"><span class="text-white"> Topics -</span> <span
+            class="skew-highlight skew-highlight--accent"><span class="unskew-text"> Course Details </span></span>
+            </h3> -->
+         <h3 class="river__header"> <span
+            class="skew-highlight skew-highlight--accent"><span class="unskew-text"> Course Details </span></span>
+         </h3>
+         <div class="faq">
+            <dl class="container__accordion">
+               @forelse ($course->topics as $key=>$topic)
+               <dt class={{ $key==0 ? "open" : "" }}>{!! $topic->title !!}</dt>
+               <dd>{!! $topic->description !!}</dd>
+               @empty
+               <dt class="open">No Topics yet</dt>
+               <dd>No Description Yet</dd>
+               @endforelse
+            </dl>
+         </div>
+         <style>
+            /* for an immediate need */
+            .container__accordion dt p strong{
+            text-transform: uppercase;
+            color: #bd5600;
+            font-size: 1.25em;
+            font-family: system-ui;
+            }
+         </style>
+         <div class="container-fluid">
+            <div class="actionbanner actionbanner--short">
+               <div class="actionbanner__wrapper">
+                  {{-- 
+                  <h2 class="actionbanner__header"> Get instructions from devops experts for today </h2>
+                  --}}
+                  {{-- <button
+                     type="button" class=" r_button r_button--primary" data-toggle="modal"
+                     data-target="#exampleModalCenter"> --}}
+                  <button type="button" class=" r_button r_button--primary" data-toggle="modal"
+                     data-target="#contactModal" onclick="return $('#contact-form')[0].reset()">
+                  <span class="ui-button-text ui-c">REGISTER FOR COURSE</span>
+                  </button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+@php
+$tutor=$course->tutor;
+@endphp
+<section class="section_allsub_03">
+   <div class="container">
+      <h1 class="pb-4">About Instructor</h1>
+      <div class="row">
+         <div class="col-sm-12 col-12">
+            <div class="tou_card h_350 ml-0 p-4">
+               <div class="row">
+                  <div class="col-sm-3 col-12">
+                     <img style=" border: solid 4px #0744ce2b;
+                        border-radius: 50%;" src="{{ asset('storage/tutors/'.$tutor->image1 )}}" class="img-fluid  mt-2 "
+                        alt="">
+                     <div class="d-flex mt-3">
+                        <div>
+                           <i class="fa fa-star" style="color:#fbc605"></i>
+                        </div>
+                        <div class="ml-1 mr-1">
+                           {{$tutor->rating}}
+                        </div>
+                        <div>
+                           Rating
+                        </div>
+                     </div>
+                     <div class="d-flex">
+                        <div>
+                           <i class="fa fa-book " style="color:#0744ce;"></i>
+                        </div>
+                        <div class="ml-1 mr-1">
+                           {{$tutor->courses->count()}}
+                        </div>
+                        <div>
+                           Courses
+                        </div>
+                     </div>
+                  </div>
+                  <div class=" col-12 col-sm-9 m-auto p-4 ">
+                     <h4>{{$tutor->name}}</h4>
+                     <p>{!! $tutor->about !!}</p>
+                     <address>
+                        <tr>
+                           <table>
+                              {{-- 
+                              <td style="width: 50px;">Phone</td>
+                              <td style="width: 10px;">:</td>
+                              <td>{{$tutor->phone??""}}</td>
+                              <tr>
+                              </tr>
+                              --}}
+                              <td style="width: 50px;">Mail</td>
+                              <td style="width: 10px;">:</td>
+                              <td>{{$tutor->email??""}}</td>
+                              </tr>
+                           </table>
+                     </address>
+                  </div>
+                  <div class="col-sm-12">
+                  <div class="container-fluid">
+                  <div class="actionbanner actionbanner--short">
+                  <div class="actionbanner__wrapper">
+                  {{-- <h2 class="actionbanner__header"> Get instructions from devops experts for today </h2> --}}
+                  {{-- <button
+                     type="button" class=" r_button r_button--primary" data-toggle="modal"
+                     data-target="#exampleModalCenter"> --}}
+                  <button type="button" class=" r_button r_button--primary"
+                     data-toggle="modal" data-target="#contactModal"
+                     onclick="return $('#contact-form')[0].reset()">
+                  <span class="ui-button-text ui-c">
+                  SPEAK TO DEVOPS EXPERT</span>
+                  </button>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- <div class="col-sm-4 col-12">
+            <div class="tou_card h_350  ml-0 p-4">
+                <h5> Related Courses </h5>
+                <ul>
+                    @forelse ($courses as $cou)
+                    @if ($course->product_name != $cou->product_name)
+                    {{-- <li>
+                        <a href="{{route('course',$cou->url_slug)}}">{{$cou->product_name}}</a>
+                    </li> --}}
+                    <li>
+                        <a href="{{route('course',$cou->url_slug)}}">
+            
+                            <div class="cour_rel">
+                                <b>
+                                    {{$cou->product_name}}
+                                </b>
+                                <span class="course_span_">
+                                    {!!$cou->long_description!!}
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+            
+                    @endif
+                    @empty
+                    <li>
+                        <a href="javascript:void(0)"> No Courses Yet </a>
+                    </li>
+                    @endforelse
+                </ul>
+            </div>
+            </div> -->
+      </div>
+   </div>
+</section>
+<!-- main end  -->
+@endsection
+@section("footerscript")
+@endsection

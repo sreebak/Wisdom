@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 53.2 (72643) - https://sketchapp.com -->
+    <title>avatar2</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <circle id="path-1" cx="32" cy="32" r="32"></circle>
+        <path d="M42.0268321,63.0402481 C35.1722557,63.0402481 29.1498107,59.711723 25.3085583,54.6348817 C29.1498107,49.5580404 35.1722557,46.2295153 42.0268321,46.2295153 C48.8814084,46.2295153 54.9038534,49.5580404 58.7451058,54.6348817 C54.9038534,59.711723 48.8814084,63.0402481 42.0268321,63.0402481 M42.0268321,21.013416 C46.6665943,21.013416 50.4321985,24.7832229 50.4321985,29.4187824 C50.4321985,34.054342 46.6665943,37.8241488 42.0268321,37.8241488 C37.3870698,37.8241488 33.6214656,34.054342 33.6214656,29.4187824 C33.6214656,24.7832229 37.3870698,21.013416 42.0268321,21.013416 M42.0268321,8.40536641 C23.4887964,8.40536641 8.40536641,23.4887964 8.40536641,42.0268321 C8.40536641,60.5648677 23.4887964,75.6482977 42.0268321,75.6482977 C60.5648677,75.6482977 75.6482977,60.5648677 75.6482977,42.0268321 C75.6482977,23.4887964 60.5648677,8.40536641 42.0268321,8.40536641" id="path-3"></path>
+    </defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="avatar">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Oval" fill="#3D1D34" xlink:href="#path-1"></use>
+            <g id="Polaris-icon/Minor/Mono/Profile" mask="url(#mask-2)">
+                <g transform="translate(-10.000000, -10.000000)">
+                    <mask id="mask-4" fill="white">
+                        <use xlink:href="#path-3"></use>
+                    </mask>
+                    <use id="Icon" stroke="none" fill=" #d7d6d6" fill-rule="evenodd" xlink:href="#path-3"></use>
+                    <g id="Color/Default" stroke="none" fill="#303336" fill-rule="evenodd" mask="url(#mask-4)">
+                        <rect id="🎨-color" fill="#FEC0CE" x="0" y="0" width="84.2446952" height="84.2446952"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
