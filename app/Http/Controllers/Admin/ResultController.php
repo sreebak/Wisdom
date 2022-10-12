@@ -53,7 +53,7 @@ class ResultController extends Controller
         }
 
         request()->validate([
-            'title' => ['required', 'string', 'max:255', 'unique:question_papers'],
+            'title' => ['required', 'string', 'max:255', 'unique:results'],
             'file.*' => ['mimes:pdf,xlx,csv|max:2048'],
         ]);        
 
@@ -137,7 +137,7 @@ class ResultController extends Controller
         
         request()->validate([
             'title' => ['required', 'string', 'max:255'],
-            'file.*' => ['mimes:pdf,xlx,csv|max:2048'],
+            'file.*' => ['required|file|mimes:pdf,xlx,csv|max:2048'],
         ]);        
 
         try {
