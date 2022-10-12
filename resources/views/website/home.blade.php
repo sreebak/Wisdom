@@ -176,7 +176,7 @@
                      </div>
                      <div class="form-group  ">
                         <select id="course" name="course" class="form-control validate">
-                        <option selected>Select Your Courses </option>
+                        <option value='' selected>Select Your Courses </option>
                         @foreach ($products as $product)
                                    
                            
@@ -185,7 +185,7 @@
                         </select>
                      </div>
                      <div class="form-group">
-                        <button type="submit" class="btn btn-primary BannerSubmitBtn" id="request_tutor_btn" onclick="savecontact()"> Submit</button>
+                        <button type="button" class="btn btn-primary BannerSubmitBtn" id="request_tutor_btn" onclick="savecontact()"> Submit</button>
                      </div>
                   </form>
                </div>
@@ -949,7 +949,6 @@
       $('#D-load-Contactform').modal('toggle');
       var id =$(this).attr('data-id');
       var file =$(this).attr('data-file');
-         //alert(id);
                     $('#q_id').val(id);
                     $('#qfile').val(file);
    });
@@ -1029,7 +1028,6 @@
                         console.log(result)
                         if (result == "Success") {
                             showMessage('Contact Sent!', '#15c39a')
-                            //window.location.href = "storage/questionpapers/"+qid;
                             window.open(
                               'storage/questionpapers/'+qfile,
                               '_blank' // <- This is what makes it open in a new window.
@@ -1068,7 +1066,6 @@
                             showMessage('Something went wrong!', '#ca3b3b')
                         }
                         $('#request_tutor_btn').prop('disabled', false);
-                        //$('#contactModal').modal('toggle')
                     },
                     error: function (res) {
                         console.log(res)

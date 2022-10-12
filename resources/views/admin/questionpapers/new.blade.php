@@ -43,7 +43,7 @@ New Question Paper
                         <div class="form-group row">
                             <label class="col-md-2 col-form-label">File</label>
                             <div class="col-md-10">
-                                <input id="file" type="file" accept=".pdf" class="form-control @error('file') is-invalid @enderror" name="file" autofocus>
+                                <input id="file" type="file" accept=".pdf" class="form-control @error('file') is-invalid @enderror" name="file" required autofocus>
                                 @error('file')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
