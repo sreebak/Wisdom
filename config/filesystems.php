@@ -147,6 +147,18 @@ return [
             'visibility' => 'public',
         ],
 
+        'questionPapers' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/questionpapers'),
+            'visibility' => 'public',
+        ],
+
+        'results' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/results'),
+            'visibility' => 'public',
+        ],
+
         'testimonials' => [
             'driver' => 'local',
             'root' => storage_path('app/public/testimonials'),
