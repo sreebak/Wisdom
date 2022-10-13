@@ -576,7 +576,7 @@
          <div class="col-12 col-sm-12 col-md-4">
             <div class="post-slide">
                <div class="post-img">
-                  <img src="{{asset('storage/products/'.$product->image1)}}" onerror="this.src='assets/image/default_img.webp'" alt="N0 image">
+                  <img src="{{asset('storage/products/'.$product->thump_image)}}" onerror="this.src='assets/image/default_img.webp'" alt="N0 image">
                   <a href="javascript:void(0)" class="over-layer"><i class="fa fa-link"></i></a>
                </div>
                <div class="post-content">

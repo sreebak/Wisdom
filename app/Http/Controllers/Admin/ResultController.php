@@ -68,8 +68,8 @@ class ResultController extends Controller
                 if(request()->file) {
                     //$fileName = "pcatg_".$result->id .'.'.request()->file->getClientOriginalExtension();
                     $fileName = request()->file->getClientOriginalName();
-                   // if($request->file->storeAs('/',$fileName,'galleryCategory')) {
-                    if($request->file->move(public_path('storage/results'), $fileName)) {
+                    if($request->file->storeAs('/',$fileName,'results')) {
+                    //if($request->file->move(public_path('storage/results'), $fileName)) {
                         $result->file = $fileName;
                         $result->save();
                     }
@@ -150,8 +150,8 @@ class ResultController extends Controller
                 if(request()->file) {
                     //$fileName = "pcatg_".$results->id .'.'.request()->file->getClientOriginalExtension();
                     $fileName = request()->file->getClientOriginalName();
-                    //if($request->file->storeAs('/',$fileName,'galleryCategory')) {
-                    if($request->file->move(public_path('storage/results'), $fileName)) {
+                    if($request->file->storeAs('/',$fileName,'results')) {
+                    //if($request->file->move(public_path('storage/results'), $fileName)) {
                         $results->file = $fileName;
                         $results->save();
                     }
