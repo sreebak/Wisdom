@@ -71,8 +71,8 @@ class SlidersController extends Controller
                 if(request()->image1) {
                     //$fileName = "slider_".$slider->id .'_1.'.request()->image1->getClientOriginalExtension();
                     $fileName = request()->image1->getClientOriginalName();
-                    if($request->image1->move(public_path('storage/sliders'), $fileName)) {
-                    //if($request->image1->storeAs('/',$fileName,'sliders')) {
+                    //if($request->image1->move(public_path('storage/sliders'), $fileName)) {
+                    if($request->image1->storeAs('/',$fileName,'sliders')) {
                         $slider->image1 = $fileName;
                         $slider->image1_alt = $request->image1_alt;
                         $slider->save();

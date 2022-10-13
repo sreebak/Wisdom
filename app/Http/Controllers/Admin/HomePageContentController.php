@@ -93,8 +93,8 @@ class HomePageContentController extends Controller
                    
                     $fileName = request()->homepage_image1->getClientOriginalName();
                  
-                    if($request->homepage_image1->move(public_path('storage/homepageImages'), $fileName)) {
-                   // if($request->homepage_image1->storeAs('/',$fileName,'homepageImages')) {
+                    //if($request->homepage_image1->move(public_path('storage/homepageImages'), $fileName)) {
+                    if($request->homepage_image1->storeAs('/',$fileName,'homepageImages')) {
                         $content->homepage_image1 = $fileName;
                         
                         $content->save();
@@ -103,7 +103,8 @@ class HomePageContentController extends Controller
                 if(request()->homepage_image2) {
                     //$fileName = "content_".$content->id .'_2.'.request()->image2->getClientOriginalExtension();
                     $fileName = request()->homepage_image2->getClientOriginalName();
-                    if($request->homepage_image2->move(public_path('storage/homepageImages'), $fileName)) {
+                    //if($request->homepage_image2->move(public_path('storage/homepageImages'), $fileName)) {
+                    if($request->homepage_image2->storeAs('/',$fileName,'homepageImages')) {  
                         $content->homepage_image2 = $fileName;
                         
                         $content->save();
@@ -112,7 +113,8 @@ class HomePageContentController extends Controller
                 if(request()->homepage_image3) {
                     //$fileName = "content_".$content->id .'_3.'.request()->image3->getClientOriginalExtension();
                     $fileName = request()->homepage_image3->getClientOriginalName();
-                    if($request->homepage_image3->move(public_path('storage/homepageImages'), $fileName)) {
+                    //if($request->homepage_image3->move(public_path('storage/homepageImages'), $fileName)) {
+                    if($request->homepage_image3->storeAs('/',$fileName,'homepageImages')) {   
                         $content->homepage_image3 = $fileName;
                        
                         $content->save();
@@ -121,7 +123,8 @@ class HomePageContentController extends Controller
                 if(request()->homepage_image4) {
                     //$fileName = "content_".$content->id .'_4.'.request()->image4->getClientOriginalExtension();
                     $fileName = request()->homepage_image4->getClientOriginalName();
-                    if($request->homepage_image4->move(public_path('storage/homepageImages'), $fileName)) {
+                    if($request->homepage_image4->storeAs('/',$fileName,'homepageImages')) {
+                    //if($request->homepage_image4->move(public_path('storage/homepageImages'), $fileName)) {
                         $content->homepage_image4 = $fileName;
                         
                         $content->save();

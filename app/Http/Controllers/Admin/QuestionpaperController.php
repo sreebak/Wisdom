@@ -69,8 +69,8 @@ class QuestionpaperController extends Controller
                 if(request()->file) {
                     //$fileName = "pcatg_".$questionpaper->id .'.'.request()->file->getClientOriginalExtension();
                     $fileName = request()->file->getClientOriginalName();
-                   // if($request->file->storeAs('/',$fileName,'galleryCategory')) {
-                    if($request->file->move(public_path('storage/questionpapers'), $fileName)) {
+                    if($request->file->storeAs('/',$fileName,'questionPapers')) {
+                    //if($request->file->move(public_path('storage/questionpapers'), $fileName)) {
                         $questionpaper->file = $fileName;
                         $questionpaper->save();
                     }
@@ -151,8 +151,8 @@ class QuestionpaperController extends Controller
                 if(request()->file) {
                     //$fileName = "pcatg_".$questionpapers->id .'.'.request()->file->getClientOriginalExtension();
                     $fileName = request()->file->getClientOriginalName();
-                    //if($request->file->storeAs('/',$fileName,'galleryCategory')) {
-                    if($request->file->move(public_path('storage/questionpapers'), $fileName)) {
+                    if($request->file->storeAs('/',$fileName,'questionPapers')) {
+                    //if($request->file->move(public_path('storage/questionpapers'), $fileName)) {
                         $questionpapers->file = $fileName;
                         $questionpapers->save();
                     }
