@@ -178,9 +178,7 @@
                         <select id="course" name="course" class="form-control validate">
                         <option value='' selected>Select Your Courses </option>
                         @foreach ($products as $product)
-                                   
-                           
-                           <option value="{{$product->id }}">{{$product->product_name }}</option>
+                           <option value="{{$product->product_name }}">{{$product->product_name }}</option>
                         @endforeach
                         </select>
                      </div>
@@ -1048,7 +1046,11 @@
             }
         }
         function savecontact() {
+         console.log($('#name').val());
+         console.log($('#email').val());
+         console.log($('#phone').val());
             if (checkValid()) {
+               console.log('hiiiii');
                 $('#request_tutor_btn').prop('disabled', true)
                 var data = $('#contact-form').serialize();
                 $.ajax({
@@ -1061,9 +1063,11 @@
                     success: function (result) {
                         console.log(result)
                         if (result == "Success") {
-                            showMessage('Contact Sent!', '#15c39a')
+                            showMessage('Contact Sent!', '#15c39a');
+                            location.reload();
                         } else {
-                            showMessage('Something went wrong!', '#ca3b3b')
+                            showMessage('Something went wrong!', '#ca3b3b');
+                            location.reload();
                         }
                         $('#request_tutor_btn').prop('disabled', false);
                     },

@@ -306,7 +306,7 @@ class WebsiteController extends Controller
                         'from_name' => 'Reon Technologies',
                         'subject' => 'Website Contact',
                         'template' => 'Emails.template1',
-                        'title' => 'Website Contact',
+                        'title' => 'Contact from Website',
                         'body' =>  $message
                     // 'from' => 'webmail@reontel.com',
                     // 'subject' => 'Website Contact',
@@ -314,10 +314,11 @@ class WebsiteController extends Controller
                     // 'title' => 'Contact from Website ',
                     // 'body' =>  $message
                 ];
-             Mail::to('sreebhasree@gmail.com')->send(new SendMail($details));
+                $mail = Mail::to('sajini@reontel.com')->send(new SendMail($details));
                 return "Success";
             }
             catch (Exception $ex) {
+                return $ex->getMessage();
                 //dd($ex);
                 return "Failed";
             }  
