@@ -694,16 +694,16 @@ body.dark .logo img {
                 </div>
                 <div class="modal-body">
                     <div class="container_d">
-                        <form action="" id="contact-form" method="POST">
-                            <input type="text" id="name" class="f_col_12" name="name" placeholder="Name.." required>
-                            <input type="text" id="email" class="f_col_12" name="email" placeholder="Email ID.."
+                        <form action="" id="contact-form-bottom" method="POST">
+                            <input type="text" id="contact_name" class="f_col_12" name="name" placeholder="Name.." required>
+                            <input type="text" id="contact_email" class="f_col_12" name="email" placeholder="Email ID.."
                                 required>
-                            <input type="number" id="phone" class="f_col_12" name="phone" placeholder=" Phone Number.."
+                            <input type="number" id="contact_phone" class="f_col_12" name="phone" placeholder=" Phone Number.."
                                 required>
-                            <select id="course" class="f_col_12" name="course" required>
+                            <select id="contact_course" class="f_col_12" name="course" required>
                                 <option class="f_col_12" value="">Select a course</option>
                                 @forelse ($courses as $course)
-                                <option class="f_col_12" value="{{$course->id}}">{{$course->product_name }}</option>
+                                <option class="f_col_12" value="{{$course->product_name}}">{{$course->product_name }}</option>
                                 @empty
                                 <option class="f_col_12" value="Docker for beginners">Docker for beginners</option>
                                 <option class="f_col_12" value="Docker in production">Docker in production</option>
@@ -721,7 +721,7 @@ body.dark .logo img {
 
                             </select>
                             <!-- <label for="subject">Subject</label> -->
-                            <textarea id="message" class="f_col_12" name="message"
+                            <textarea id="contact_message" class="f_col_12" name="message"
                                 placeholder="Write something.."></textarea>
                             <button type="button" id="request_tutor_btn" class=" f_col_12 r_button r_button--primary"
                                 onclick="saveContact()">
@@ -762,9 +762,10 @@ body.dark .logo img {
             $('#navbar_devo').hide()
         });
         function saveContact() {
-            if (checkValid()) {
+            if (checkContactValid()) {
                 $('#request_tutor_btn').prop('disabled', true)
-                var data = $('#contact-form').serialize();
+                var data = $('#contact-form-bottom').serialize();
+                console.log('data',data);
                 $.ajax({
                     headers: {
                         'X-CSRF-Token': '{{ csrf_token() }}'
@@ -802,9 +803,9 @@ body.dark .logo img {
             })
         }
 
-        function checkValid() {
-            if ($.trim($('#name').val()) == '' || $.trim($('#email').val()) == '' || $.trim($('#phone').val()) == '' ||
-                $('#course').val() == '') {
+        function checkContactValid() {
+            if ($.trim($('#contact_name').val()) == '' || $.trim($('#contact_email').val()) == '' || $.trim($('#contact_phone').val()) == '' ||
+                $('#contact_course').val() == '') {
                 return false;
             }
             return true

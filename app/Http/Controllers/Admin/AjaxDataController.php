@@ -42,7 +42,7 @@ class AjaxDataController extends Controller
     
     public function SaveContact(Request $request)
     {
-         return response()->json($request->all());
+        //  return response()->json($request->all());
         $contact = new Contact;
         $contact->name = $request->name;
         $contact->email = $request->email;
@@ -60,18 +60,20 @@ class AjaxDataController extends Controller
 
             try {
                 $details =[
-                    'from' => 'aju@reontel.com',
+                    'from' => 'webmail@reontel.com',
+                    'from_name' => 'Reon Technologies',
                     'subject' => 'Website Contact',
                     'template' => 'Emails.template1',
-                    'title' => 'Contact from Website ',
+                    'title' => 'Contact from Website',
                     'body' =>  $message
                 ];
     
-                Mail::to('reondeveloper@gmail.com')->send(new SendMail($details));
+                Mail::to('sajini@reontel.com')->send(new SendMail($details));
     
                 return "Success";
             }
             catch (Exception $ex) {
+                return $ex->getMessage();
                 return "Failed";
             }  
         }
